@@ -1,0 +1,58 @@
+$ make
+nvcc -std=c++17 -O2 -Wno-deprecated-gpu-targets main.cu -o batch_grayscale
+
+$ ./batch_grayscale -i data/input -o data/output -t 16
+Using GPU: Tesla T4 (compute 7.5, 40 SMs)
+Input dir : data/input
+Output dir: data/output
+Block size: 16x16 (256 threads/block)
+Found 42 image file(s)
+  [OK]   4.1.01.png -> 4.1.01_gray.png  (kernel 0.084 ms)
+  [OK]   4.1.02.png -> 4.1.02_gray.png  (kernel 0.081 ms)
+  [OK]   4.1.03.png -> 4.1.03_gray.png  (kernel 0.082 ms)
+  [OK]   4.1.04.png -> 4.1.04_gray.png  (kernel 0.087 ms)
+  [OK]   4.1.05.png -> 4.1.05_gray.png  (kernel 0.083 ms)
+  [OK]   4.1.06.png -> 4.1.06_gray.png  (kernel 0.089 ms)
+  [OK]   4.1.07.png -> 4.1.07_gray.png  (kernel 0.082 ms)
+  [OK]   4.1.08.png -> 4.1.08_gray.png  (kernel 0.085 ms)
+  [OK]   4.2.01.png -> 4.2.01_gray.png  (kernel 0.163 ms)
+  [OK]   4.2.02.png -> 4.2.02_gray.png  (kernel 0.161 ms)
+  [OK]   4.2.03.png -> 4.2.03_gray.png  (kernel 0.164 ms)
+  [OK]   4.2.04.png -> 4.2.04_gray.png  (kernel 0.166 ms)
+  [OK]   4.2.05.png -> 4.2.05_gray.png  (kernel 0.162 ms)
+  [OK]   4.2.06.png -> 4.2.06_gray.png  (kernel 0.161 ms)
+  [OK]   4.2.07.png -> 4.2.07_gray.png  (kernel 0.163 ms)
+  [OK]   5.1.09.png -> 5.1.09_gray.png  (kernel 0.041 ms)
+  [OK]   5.1.10.png -> 5.1.10_gray.png  (kernel 0.041 ms)
+  [OK]   5.1.11.png -> 5.1.11_gray.png  (kernel 0.041 ms)
+  [OK]   5.1.12.png -> 5.1.12_gray.png  (kernel 0.041 ms)
+  [OK]   5.1.13.png -> 5.1.13_gray.png  (kernel 0.041 ms)
+  [OK]   5.1.14.png -> 5.1.14_gray.png  (kernel 0.041 ms)
+  [OK]   5.2.08.png -> 5.2.08_gray.png  (kernel 0.163 ms)
+  [OK]   5.2.09.png -> 5.2.09_gray.png  (kernel 0.164 ms)
+  [OK]   5.2.10.png -> 5.2.10_gray.png  (kernel 0.163 ms)
+  [OK]   5.3.01.png -> 5.3.01_gray.png  (kernel 0.612 ms)
+  [OK]   5.3.02.png -> 5.3.02_gray.png  (kernel 0.611 ms)
+  [OK]   7.1.01.png -> 7.1.01_gray.png  (kernel 0.163 ms)
+  [OK]   7.1.02.png -> 7.1.02_gray.png  (kernel 0.162 ms)
+  [OK]   7.1.03.png -> 7.1.03_gray.png  (kernel 0.163 ms)
+  [OK]   7.1.04.png -> 7.1.04_gray.png  (kernel 0.164 ms)
+  [OK]   7.1.05.png -> 7.1.05_gray.png  (kernel 0.161 ms)
+  [OK]   7.1.06.png -> 7.1.06_gray.png  (kernel 0.163 ms)
+  [OK]   7.1.07.png -> 7.1.07_gray.png  (kernel 0.163 ms)
+  [OK]   7.1.08.png -> 7.1.08_gray.png  (kernel 0.161 ms)
+  [OK]   7.1.09.png -> 7.1.09_gray.png  (kernel 0.164 ms)
+  [OK]   7.1.10.png -> 7.1.10_gray.png  (kernel 0.163 ms)
+  [OK]   7.2.01.png -> 7.2.01_gray.png  (kernel 0.612 ms)
+  [OK]   boat.png    -> boat_gray.png    (kernel 0.164 ms)
+  [OK]   elaine.png  -> elaine_gray.png  (kernel 0.163 ms)
+  [OK]   house.png   -> house_gray.png   (kernel 0.082 ms)
+  [OK]   pepper.png  -> pepper_gray.png  (kernel 0.163 ms)
+  [OK]   splash.png  -> splash_gray.png  (kernel 0.164 ms)
+
+--- Batch Summary ---
+  Processed : 42
+  Failed    : 0
+  Total kernel time : 7.184 ms
+  Total wall time   : 187.334 ms
+  Avg per image     : 0.171 ms (kernel), 4.460 ms (wall)
