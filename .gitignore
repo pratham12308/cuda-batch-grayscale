@@ -1,0 +1,15 @@
+# build artifacts
+batch_grayscale
+*.o
+*.obj
+*.exe
+
+# outputs (keep the folder but not runtime results)
+data/output/*
+!data/output/.gitkeep
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
